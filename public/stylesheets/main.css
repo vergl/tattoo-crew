@@ -1,0 +1,223 @@
+/* FONT IMPORT */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+/* GLOBAL SCOPE */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: wheat;
+    /*background-image: url(http://data.whicdn.com/images/106809837/large.jpg);*/
+    background: #9a6060;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    color: black;
+   } 
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: wheat;
+}
+
+/* NAVIGATION BAR */ 
+
+.nav.navbar-nav.navbar-right li a, .logo-text {
+    font-weight: 700;
+    color: wheat;
+    text-transform: uppercase;
+}
+.nav.navbar-nav.navbar-right li a:hover {
+    color: white;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: wheat;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: wheat;
+}
+
+.logo-text {
+    letter-spacing: 2px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: wheat;
+}
+
+/* BUTTONS */
+
+.site-button {
+  border: 3px solid wheat;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 2rem;
+  color: wheat;
+  background: transparent;
+}
+
+.site-button:hover,
+.site-button:focus {
+    border: 3px solid white;
+    color: white;
+    text-decoration: none;
+}
+
+.site-button-sm {
+     border: 2px solid wheat;
+     border-radius: 3px;
+     padding: 3px;
+     margin-top: 5px;
+     text-decoration: none;
+     font-size: 1.5rem;
+     color: wheat;
+     background: transparent;
+}
+
+.site-button-sm:hover,
+.site-button-sm:focus {
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+}
+
+
+.button-width {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.button-block {
+    margin-bottom: 15px;
+    margin-top: -15px;
+}
+
+.button-float {
+    margin-top:10px;
+    float:right;
+}
+
+/* FORMS */
+
+.form {
+    text-align: center;
+    padding: 15px;
+    max-width: 580px;
+    margin: 10px auto;
+    border: 3px solid wheat;
+    border-radius: 3px;
+    background: #222222;
+}
+
+
+/* THUMBNAILS */
+
+.thumbnail> .img-height {
+    height: 200px;
+}
+
+.thumbnail .caption {
+    color: wheat;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+/* CONTAINERS */
+
+.jumbotron {
+    background: #222222;
+    margin-top: -30px;
+}
+
+.site-container {
+    background: #222222;
+    padding: 10px;
+    border: 3px solid wheat;
+}
+
+.wheat-border {
+    border: 3px solid wheat;
+}
+
+.well {
+    margin-top: -25px;
+}
+
+/* MISCELLANEOUS */
+
+#delete-form {
+    display: inline;
+}
+
+.lead {
+    margin: 8px;
+}
+
+.user-info {
+    border: 3px solid wheat; 
+    padding: 5px; 
+    background: #222222; 
+    margin: 10px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.fixed-height {
+    height: 100px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 858px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 780px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 702px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 724px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 623px) {
+    html {
+        font-size: 8px;
+    }
+}

@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+
+<div class="form">
+    <h1>Sign up!</h1>
+
+    <form action="/register" method="POST">
+        <div class="form-group">
+            <input class="form-control wheat-border" type="text" name="username" placeholder="username">
+        </div>
+        <div class="form-group">
+            <input class="form-control wheat-border" type="password" name="password" placeholder="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control wheat-border" type="password" name="confirmPassword" placeholder="confirm password">
+        </div>
+        <button class="site-button btn-block">Submit</button>
+    </form>
+</div>
+
+
+
+<% include ./partials/footer %>

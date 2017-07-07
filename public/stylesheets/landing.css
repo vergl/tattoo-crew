@@ -1,0 +1,125 @@
+/* FONT IMPORT */
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+/* GLOBAL SCOPE */
+
+body {
+  background-color: #000;
+  font-family: 'Abril Fatface', cursive;
+}
+
+/* HEADER */
+
+#landing-header {
+  z-index: 1;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#landing-header h1 {
+  color: wheat;
+  font-size: 5rem;
+  margin-bottom: 25px;
+}
+
+/* BORDER */
+
+.landing-border {
+  border: 5px dashed wheat;
+  display: inline-block;
+  padding: 10px 40px 40px 40px;
+}
+
+/* BUTTON */
+
+.landing-button {
+  border: 3px solid wheat;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 2rem;
+  color: wheat;
+}
+
+.landing-button:hover,
+.landing-button:focus,
+.landing-button:active {
+  color:white;
+  border: 3px solid white;
+  text-decoration: none;
+}
+
+/* ANIMATION SETTINGS */
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://images.unsplash.com/photo-1475695752828-6d2b0a83cf8a?dpr=1&auto=format&fit=crop&w=1500&h=1040&q=80&cs=tinysrgb&crop=&bg=) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://images.unsplash.com/photo-1485742032238-7543513eeba6?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://images.unsplash.com/photo-1475695395073-ec071eda8106?dpr=1&auto=format&fit=crop&w=1500&h=940&q=80&cs=tinysrgb&crop=&bg=);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://images.unsplash.com/photo-1491707202941-6395f060840f?dpr=1&auto=format&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb&crop=&bg=);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://images.unsplash.com/photo-1474644827279-5e070d598f57?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg=);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}

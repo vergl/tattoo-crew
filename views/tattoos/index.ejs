@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+     
+    <header class="jumbotron">
+        <div class="container">
+            <h1>This is the Tattoo Crew!</h1>
+            <p>View our hand-picked tattoos from all over the world!</p>
+            <p>
+                <a class="site-button" href="/tattoos/new">Add New Tattoo</a>  
+            </p>
+        </div>
+    </header>
+        
+    <div class="container">
+        <div class="row text-center">
+            <% tattoos.forEach(function(tattoo){ %>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail site-container">
+                        <img class="img-height" src="<%= tattoo.image %>">
+                        <div class="caption">
+                            <h4><%=tattoo.name %></h4>
+                            <p><i>by <%=tattoo.author.username %></i></p>
+                        </div>
+                        <p>
+                            <a href="/tattoos/<%= tattoo._id %>" class="site-button">More info</a>
+                        </p>
+                    </div>
+                </div>
+            <% });%>
+        </div>
+    </div>
+
+<% include ../partials/footer %>

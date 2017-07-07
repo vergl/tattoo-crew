@@ -1,0 +1,81 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-push-4">
+            <div class="thumbnail site-container">
+                <img class="img-responsive" src="<%= tattoo.image %>">
+                <div class="caption-full">
+                    <h4 class="pull-right">$<%= tattoo.price %></h4>
+                    <h4><strong><%= tattoo.name %></strong></h4>
+                    <p><%= tattoo.description %></p>
+                    <p><em>Submitted By <%= tattoo.author.username %></em></p>
+                    <% if (currentUser && tattoo.author.id.equals(currentUser._id)) { %>
+                        <div class="button-block">
+                            <a class="site-button-sm" href="/tattoos/<%=tattoo._id%>/edit">Edit</a>
+                            <form id="delete-form" action="/tattoos/<%=tattoo._id%>?_method=DELETE" method="POST">
+                                <button class="site-button-sm">Delete</button>
+                            </form>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="well site-container">
+                <% if(!currentUser) { %>
+                    <h3>Register or Log in to comment this tattoo.</h3>
+                <% } else { %>
+                <form action="/tattoos/<%=tattoo._id%>/comments" method="POST">
+                    <textarea class="wheat-border" placeholder="Write your comment here..." name="comment[text]"></textarea>
+                    <div class="text-right mt-10">
+                        <button class="site-button">Add New Comment</button>
+                    </div>
+                </form>
+                <% } %>
+                
+                <hr>
+                <% if (tattoo.comments.length == 0) { %>
+                    <h4>There are no comments right now. Be the first!</h4>
+                <% } else { %>
+                    <% tattoo.comments.forEach(function(comment) {  %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <strong><%=comment.author.username %></strong>
+                            <span class="pull-right"><%= comment.date.toDateString() %></span>
+                            <p><%=comment.text%></p>
+                            <% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
+                            <div class="button-block">
+                                <a class="site-button-sm" href="/tattoos/<%=tattoo._id %>/comments/<%=comment._id%>/edit">Edit</a>
+                                <form id="delete-form" action="/tattoos/<%=tattoo._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                    <input type="submit" class="site-button-sm" value="Delete">
+                                </form>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <% }) %>
+                <% } %>
+            </div>
+        </div>
+        <div class="col-md-4 col-md-pull-8">
+            <div class="thumbnail site-container">
+                <h3 class="mt-10">About Author</h3>
+                <div class="list-group">
+                    <div>
+                        <img class="img-responsive" src="<%= tattoo.author.id.image ? tattoo.author.id.image : 'https://techreport.com/forums/styles/canvas/theme/images/no_avatar.jpg'%>" />
+                    </div>
+                    <div class="button-float">
+                        <a href="/users/<%=tattoo.author.id._id %>" class="site-button-sm" >Show More</a>
+                    </div>
+                    <h4><%= tattoo.author.id.username %></h4>
+                    
+                    <p><%= tattoo.author.id.city %>, <%= tattoo.author.id.country %></p>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+ 
+
+<% include ../partials/footer %>
